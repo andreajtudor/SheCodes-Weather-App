@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6a727a8566.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&display=swap" rel="stylesheet">
+</head>
+  <body>
+      <div class="container">
+        <div class="enter-city">
+            <div class="row">
+                <div class="col-6 city-time-date">
+                    <p id="current-city">Current date & time:</p>
+                    <p id="date-time">Current Date & Time</p>
+                </div>
+                <div class="col-6">
+                    <form class="form-inline" id = "city-form">
+                        <div class="form-group">
+                            <input type="search" class="form-control" id="city-input" aria-describedby="cityHelp" placeholder="Enter your city" autocomplete="off" autofocus="on">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" value="Search">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+          <div class="todays-weather">
+            <div class="row">
+                <div class="col-6">
+                    <span class="current-temp" id="current-temp">XX</span>
+                    <span class="units">
+                        <a href="#" id="fahrenheit-link">°F</a> |
+                        <a href="#" id="celsius-link">°C</a>
+                        
+                      </span>
+                    <p id="other-info">
+                        Precip. Info
+                    </p>
+                </div>
+                <div class="col-6">
+                    <i class="fas fa-cloud-sun" style="width: 100%;"></i>
+                </div>
+                </div>
+          </div>
+          <div class="five-day-forecast">
+          <div class="row">
+            <div class="col day-section-label">
+                    <p>
+                        Five-day forecast:
+                    </p>
+            </div>
+            <div class="col line">
+                <div class="day">
+                    <p>Day 1</p>
+                        <i class="fas fa-sun"></i>
+                    <p>XX°F</p>
+                </div>    
+            </div>
+            <div class="col">
+                <div class="day">
+                    <p>Day 2</p>
+                    <i class="fas fa-cloud-sun-rain"></i>
+                    <p>XX°F</p>
+                </div>   
+            </div>
+            <div class="col line">
+                <div class="day">
+                    <p>Day 3</p>
+                    <i class="fas fa-cloud-sun-rain"></i>
+                    <p>XX°F</p>
+                </div>   
+            </div>
+            <div class="col">
+                <div class="day">
+                    <p>Day 4</p>
+                    <i class="fas fa-cloud-sun-rain"></i>
+                    <p>XX°F</p>
+                </div>  
+            </div>
+            <div class="col line">
+                <div class="day">
+                    <p>Day 5</p>
+                    <i class="fas fa-sun"></i>
+                    <p>XX°F</p>
+                </div>  
+            </div>
+          </div>
+      </div>
+      <script src="src/Week5-Homework.js"></script>
+  </body>
