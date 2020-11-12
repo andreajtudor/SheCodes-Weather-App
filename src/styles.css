@@ -136,6 +136,14 @@ a:active {
     padding-bottom: 1rem;
 }
 
+footer {
+    padding-top: 20px;
+}
+
+.footer-text {
+    text-align: center;
+}
+
 @media only screen and (max-width: 768px) {
     .form-inline .form-group {
         width: 100%;
