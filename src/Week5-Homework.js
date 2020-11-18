@@ -1,8 +1,14 @@
 // Display Current Date & Time
-
 let now = new Date();
 
+// Current date/time in header
 let dateTime = document.querySelector("#date-time");
+// Five-day forecast days
+let dayOne = document.querySelector ("#day-1");
+let dayTwo = document.querySelector ("#day-2");
+let dayThree = document.querySelector ("#day-3");
+let dayFour = document.querySelector ("#day-4");
+let dayFive = document.querySelector ("#day-5");
 
   let days = [
     "Sunday", 
@@ -13,7 +19,13 @@ let dateTime = document.querySelector("#date-time");
     "Friday", 
     "Saturday"
   ];
+
   let day = days[now.getDay()];
+  let secondDay = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+  let thirdDay = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+  let fourthDay = new Date(now.getTime() + 72 * 60 * 60 * 1000);
+  let fifthDay = new Date(now.getTime() + 96 * 60 * 60 * 1000);
+
   let date = now.getDate();
   let months = [
     "Jan.",
@@ -42,8 +54,14 @@ let dateTime = document.querySelector("#date-time");
     let strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   }
-
+// Current date/time in header
 dateTime.innerHTML = `${day}, ${month} ${date}, ${year} ${formatAMPM(new Date)}`;
+// Five-day forecast days
+dayOne.innerHTML =`${day.slice(0,3)}.`;
+dayTwo.innerHTML = `${days[secondDay.getDay()].slice(0,3)}.`;
+dayThree.innerHTML = `${days[thirdDay.getDay()].slice(0,3)}.`;
+dayFour.innerHTML = `${days[fourthDay.getDay()].slice(0,3)}.`;
+dayFive.innerHTML = `${days[fifthDay.getDay()].slice(0,3)}.`;
 
 function getPosition(position) {
     let lat = Math.round(position.coords.latitude);
@@ -60,6 +78,7 @@ navigator.geolocation.getCurrentPosition(getPosition);
 function showWeather (response) {
     document.querySelector("#current-city").innerHTML = `${response.data.name}`;
     document.querySelector("#current-temp").innerHTML = Math.round((response.data.main.temp * 9) / 5 + 32);
+    document.querySelector("#temp-1").innerHTML = `${Math.round((response.data.main.temp * 9) / 5 + 32)}°F `;
     document.querySelector("#other-info").innerHTML = `${response.data.weather[0].description} with a humidity of ${response.data.main.humidity}%`;
     //document.querySelector("#current-weather-icon").innerHTML = TBD
   
