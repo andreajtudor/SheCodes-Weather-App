@@ -58,9 +58,10 @@ navigator.geolocation.getCurrentPosition(getPosition);
 
 
 function showWeather (response) {
-    document.querySelector("#current-city").innerHTML = `${response.data.name} weather as of`;
+    document.querySelector("#current-city").innerHTML = `${response.data.name}`;
     document.querySelector("#current-temp").innerHTML = Math.round((response.data.main.temp * 9) / 5 + 32);
     document.querySelector("#other-info").innerHTML = `${response.data.weather[0].description} with a humidity of ${response.data.main.humidity}%`;
+    //document.querySelector("#current-weather-icon").innerHTML = TBD
   
     // Convert Temp
     function convertTempC (event) {

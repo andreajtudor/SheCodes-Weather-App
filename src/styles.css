@@ -23,8 +23,17 @@ a:active {
 
 
 .container {
-    border: solid 1px #BDBDBD;
     width: 100%;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.weather-app {
+    max-width: 800px;
+    min-width: 375px;
+    border: solid 1px #BDBDBD;
     padding-right: 0px !important;
     padding-left: 0px !important;
     padding-bottom: 35px;
@@ -37,12 +46,20 @@ a:active {
 }
 
 .city-time-date {
-    margin-top: 1.75%;
+    vertical-align: middle;
+    margin: auto;
 }
 
-#date-time, #current-city {
+#date-time {
     margin-left: 5%;
-    margin-bottom: 0 !important;
+    margin-bottom: 5% !important;
+    color: #ffffff;
+}
+
+#current-city {
+    font-size: 2rem;
+    margin-left: 5%;
+    margin-bottom: -5px !important;
     color: #ffffff;
 }
 
@@ -160,17 +177,13 @@ footer {
         width: 100%;
     }
 
-    .city-time-date {
-        margin-top: 9%;
-    }
 
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 535px) {
 
     .city-time-date {
         font-size: .9rem;
-        margin-top: 10%;
     }
 
     .todays-weather i {
@@ -181,11 +194,14 @@ footer {
 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 474px) {
 
     .city-time-date {
         font-size: 1rem;
-        margin-top: 3%;
+    }
+
+    .col.day-section-label {
+        display: none;
     }
 
 }
