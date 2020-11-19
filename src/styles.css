@@ -150,6 +150,14 @@ a:active {
     padding-bottom: 1rem;
 }
 
+.high-temp {
+    margin-bottom: 0px !important;
+}
+
+.low-temp {
+    color: #BDBDBD;
+}
+
 footer {
     padding-top: 20px;
 }
