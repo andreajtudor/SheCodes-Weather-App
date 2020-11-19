@@ -115,6 +115,10 @@ a:active {
     padding-right: 40%;
 }
 
+#current-weather-icon {
+    height: 100%;
+}
+
 .five-day-forecast {
     width: 86%;
     margin: 0 auto;
