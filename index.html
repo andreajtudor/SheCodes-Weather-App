@@ -34,7 +34,7 @@
           <div class="todays-weather">
             <div class="row">
                 <div class="col-6">
-                    <span class="current-temp" id="current-temp">XX</span>
+                    <span class="current-temp" id="current-temp"></span>
                     <span class="units">
                         <a href="#" id="fahrenheit-link">°F</a> |
                         <a href="#" id="celsius-link">°C</a>
@@ -51,7 +51,7 @@
                 </div>
                 </div>
           </div>
-          <div class="five-day-forecast">
+          <div class="five-day-forecast" id="five-day-forecast">
           <div class="row">
             <div class="col day-section-label">
                     <p>
@@ -62,45 +62,53 @@
                 <div class="day">
                     <p id="day-1">Day 1</p>
                     <!--<div id="icon-1"><i class="fas fa-sun"></i></div>-->
-                    <img id="icon-1" src="" alt="weather icon">
+                    <img class= "forecast-icon" id="icon-1" src="" alt="weather icon">
                     <p class="high-temp" id="hi-temp-1">XX°F</p>
-                    <p class="low-temp" id="lo-temp-1">XX°F</p>
+                    <p class="forecast-description" id="forecast-description-1">XX°F</p>
                 </div>    
             </div>
             <div class="col">
                 <div class="day">
                     <p id="day-2">Day 2</p>
                     <!--<div id="icon-2"><i class="fas fa-cloud-sun-rain"></i></div>-->
-                    <img id="icon-2" src="" alt="weather icon">
-                    <p class="high-temp" id="hi-temp-2">XX°F</p>
-                    <p class="low-temp" id="lo-temp-2">XX°F</p>
+                    <div id="day-2-forecast">
+                        <img class= "forecast-icon" id="icon-2" src="" alt="weather icon">
+                        <p class="high-temp" id="hi-temp-2"> </p>
+                        <p class="forecast-description" id="forecast-description-2"> </p>
+                    </div>
                 </div>   
             </div>
             <div class="col line">
                 <div class="day">
                     <p id="day-3">Day 3</p>
                     <!--<div id="icon-3"><i class="fas fa-sun"></i></div>-->
-                    <img id="icon-3" src="" alt="weather icon">  
-                    <p class="high-temp" id="hi-temp-3">XX°F</p>
-                    <p class="low-temp" id="lo-temp-3">XX°F</p>
+                    <div id="day-3-forecast">
+                        <img class= "forecast-icon" id="icon-3" src="" alt="weather icon">
+                        <p class="high-temp" id="hi-temp-3"> </p>
+                        <p class="forecast-description" id="forecast-description-3"> </p>
+                    </div>
                 </div>   
             </div>
             <div class="col">
                 <div class="day">
                     <p id="day-4">Day 4</p>
                     <!--<div id="icon-4"><i class="fas fa-cloud-sun-rain"></i></div>-->
-                    <img id="icon-4" src="" alt="weather icon">
-                    <p class="high-temp" id="hi-temp-4">XX°F</p>
-                    <p class="low-temp" id="lo-temp-4">XX°F</p>
+                    <div id="day-4-forecast">
+                        <img class= "forecast-icon" id="icon-4" src="" alt="weather icon">
+                        <p class="high-temp" id="hi-temp-4"> </p>
+                        <p class="forecast-description" id="forecast-description-4"> </p>
+                    </div>
                 </div>  
             </div>
             <div class="col line">
                 <div class="day">
                     <p id="day-5">Day 5</p>
                     <!--<div id="icon-5s"><i class="fas fa-sun"></i></div>-->
-                    <img id="icon-5" src="" alt="weather icon"> 
-                    <p class="high-temp" id="hi-temp-5">XX°F</p>
-                    <p class="low-temp" id="lo-temp-5">XX°F</p>
+                    <div id="day-5-forecast">
+                        <img class= "forecast-icon" id="icon-5" src="" alt="weather icon">
+                        <p class="high-temp" id="hi-temp-5"> </p>
+                        <p class="forecast-description" id="forecast-description-5"> </p>
+                    </div>
                 </div>  
             </div>
           </div>
