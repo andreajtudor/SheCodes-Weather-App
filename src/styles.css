@@ -49,14 +49,14 @@ a:active {
 
 #date-time {
     margin-left: 5%;
-    margin-bottom: 5% !important;
     color: #ffffff;
+    line-height: 1.1;
 }
 
 #current-city {
     font-size: 2rem;
     margin-left: 5%;
-    margin-bottom: -5px !important;
+    margin-bottom: 5px !important;
     color: #ffffff;
     line-height: 1;
 }
@@ -212,6 +212,7 @@ footer {
     }
 
     .container {
+        width: 95%;
         padding-right: 10px;
         padding-left: 10px;
     }
