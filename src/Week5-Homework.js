@@ -88,10 +88,10 @@ function showWeather (response) {
     document.querySelector("#other-info").innerHTML = `${response.data.weather[0].description} with a humidity of ${response.data.main.humidity}%`;
     
     let currentIconElement = document.querySelector("#current-weather-icon");
-    currentIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    currentIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
     let dayOneIconElement = document.querySelector("#icon-1");
-    dayOneIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    dayOneIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   
     // Convert Temp
     function convertTempC (event) {
@@ -122,7 +122,7 @@ function showForecast (response) {
   let forecastTwo = response.data.list[6];
   
   forecastElementTwo.innerHTML = `
-      <img class= "forecast-icon"id="icon-2" src="http://openweathermap.org/img/wn/${forecastTwo.weather[0].icon}@2x.png" alt="weather icon">
+      <img class= "forecast-icon"id="icon-2" src="https://openweathermap.org/img/wn/${forecastTwo.weather[0].icon}@2x.png" alt="weather icon">
       <p class="high-temp" id="hi-temp-2">${Math.round((forecastTwo.main.temp_max * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-2">${forecastTwo.weather[0].description}</p>
   `;
@@ -131,7 +131,7 @@ function showForecast (response) {
   let forecastThree = response.data.list[14];
   
   forecastElementThree.innerHTML = `
-      <img class= "forecast-icon"id="icon-3" src="http://openweathermap.org/img/wn/${forecastThree.weather[0].icon}@2x.png" alt="weather icon">
+      <img class= "forecast-icon"id="icon-3" src="https://openweathermap.org/img/wn/${forecastThree.weather[0].icon}@2x.png" alt="weather icon">
       <p class="high-temp" id="hi-temp-3">${Math.round((forecastThree.main.temp_max * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-3">${forecastThree.weather[0].description}</p>
   `;
@@ -140,7 +140,7 @@ function showForecast (response) {
   let forecastFour = response.data.list[22];
   
   forecastElementFour.innerHTML = `
-      <img class= "forecast-icon"id="icon-4" src="http://openweathermap.org/img/wn/${forecastFour.weather[0].icon}@2x.png" alt="weather icon">
+      <img class= "forecast-icon"id="icon-4" src="https://openweathermap.org/img/wn/${forecastFour.weather[0].icon}@2x.png" alt="weather icon">
       <p class="high-temp" id="hi-temp-4">${Math.round((forecastFour.main.temp_max * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-4">${forecastFour.weather[0].description}</p>
   `;
@@ -149,7 +149,7 @@ function showForecast (response) {
   let forecastFive = response.data.list[30];
   
   forecastElementFive.innerHTML = `
-      <img class= "forecast-icon"id="icon-5" src="http://openweathermap.org/img/wn/${forecastFive.weather[0].icon}@2x.png" alt="weather icon">
+      <img class= "forecast-icon"id="icon-5" src="https://openweathermap.org/img/wn/${forecastFive.weather[0].icon}@2x.png" alt="weather icon">
       <p class="high-temp" id="hi-temp-5">${Math.round((forecastFive.main.temp_max * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-5">${forecastFive.weather[0].description}</p>
   `;

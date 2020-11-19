@@ -29,7 +29,7 @@ a:active {
 
 .weather-app {
     max-width: 800px;
-    min-width: 375px;
+    min-width: 404px;
     border: solid 1px #BDBDBD;
     padding-right: 0px !important;
     padding-left: 0px !important;
@@ -58,6 +58,7 @@ a:active {
     margin-left: 5%;
     margin-bottom: -5px !important;
     color: #ffffff;
+    line-height: 1;
 }
 
 .enter-city {
