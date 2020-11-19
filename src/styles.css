@@ -1,10 +1,10 @@
 p, .form-control, .btn-primary {
     font-family: 'Quicksand', sans-serif;
-    color: #212121;
+    color: #48484A;
 }
 
 i {
-    color: #757575;
+    color: #48484A;
 }
 
 a {
@@ -80,14 +80,14 @@ a:active {
 
 .btn.btn-primary {
     color: #fff;
-    background-color: #00BCD4;
+    background-color: #ec6e4b;
     border-color: #ffffff;
     margin-left: 5px;
 }
 
 .btn.btn-primary:hover {
     color: #fff;
-    background-color: #607D8B;
+    background-color: #FF5722;
     border-color: #ffffff;
     transition: ease-in-out;
 }
