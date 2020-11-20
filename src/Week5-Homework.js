@@ -177,18 +177,23 @@ let form = document.querySelector("#city-form");
 form.addEventListener("submit", handleSubmit);
 
 
+
 // Get Lat, Long from Free-Form Text Search via HERE API
 
 function getLatLon(response) {
-  let lat = response.data.items[0].position.lat;
-  let lon = response.data.items[0].position.lng;
+  let lat = Math.round(response.data.items[0].position.lat);
+  let lon = Math.round(response.data.items[0].position.lng);
 
   console.log(lat);
   console.log(lon);
+
+ // let apiKey = "809f83a3c3f1056fc8bafdb178a866cc";
+ // let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+ // axios.get(apiUrl).then(showForecast);
 }
 
 function getLatLong(location) {
-  let apiKeyHere = "pOSJq-NFi_yJbK1dYMRhcbhKcE7-8ZludyBZDhiwAE0";
+  let apiKeyHere = "Q6NK3f66tnfI5_NUCSH6ejCXddMcmeUaMS7sUpO_VH4";
   let apiUrlHere = `https://geocode.search.hereapi.com/v1/geocode?q=${location}&apiKey=${apiKeyHere}`;
   axios.get(apiUrlHere).then(getLatLon);
 }
