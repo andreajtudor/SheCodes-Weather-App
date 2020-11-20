@@ -83,7 +83,7 @@ navigator.geolocation.getCurrentPosition(getPosition);
 function showWeather (response) {
     document.querySelector("#current-city").innerHTML = `${response.data.name}`;
     document.querySelector("#current-temp").innerHTML = Math.round((response.data.main.temp * 9) / 5 + 32);
-    document.querySelector("#other-info").innerHTML = `${response.data.weather[0].description} with a humidity of ${response.data.main.humidity}%`;
+    document.querySelector("#other-info").innerHTML = `${response.data.weather[0].description} with a humidity of ${response.data.main.humidity}% and a wind speed of ${response.data.wind.speed} mph`;
     
     let currentIconElement = document.querySelector("#current-weather-icon");
     currentIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
