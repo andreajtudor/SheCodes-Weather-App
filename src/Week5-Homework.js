@@ -155,8 +155,6 @@ function showForecast (response) {
   `;
 }
 
-
-
 // Search Bar to API
 //function searchCity(city) {
     //let apiKey = "809f83a3c3f1056fc8bafdb178a866cc";
@@ -180,8 +178,8 @@ function showForecast (response) {
 // Get Lat, Long from Free-Form Text Search via HERE API
 
 function getLatLon(response) {
-  let lat = Math.round(response.data.items[0].position.lat);
-  let lon = Math.round(response.data.items[0].position.lng);
+  let lat = response.data.items[0].position.lat;
+  let lon = response.data.items[0].position.lng;
 
   console.log(lat);
   console.log(lon);
