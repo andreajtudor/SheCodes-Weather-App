@@ -73,7 +73,7 @@ function getPosition(position) {
   
     axios.get(apiUrl).then(showWeather);
 
-    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(showForecast);
   }
 
@@ -116,41 +116,41 @@ function showWeather (response) {
 
 // Forecast
 function showForecast (response) {
-  //console.log(response.data.list);
+  console.log(response.data.daily);
 
   let forecastElementTwo = document.querySelector("#day-2-forecast");
-  let forecastTwo = response.data.list[6];
+  let forecastTwo = response.data.daily[1];
   
   forecastElementTwo.innerHTML = `
       <img class= "forecast-icon"id="icon-2" src="https://openweathermap.org/img/wn/${forecastTwo.weather[0].icon}@2x.png" alt="weather icon">
-      <p class="high-temp" id="hi-temp-2">${Math.round((forecastTwo.main.temp_max * 9) / 5 + 32)}°F</p>
+      <p class="high-temp" id="hi-temp-2">${Math.round((forecastTwo.temp.day * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-2">${forecastTwo.weather[0].description}</p>
   `;
 
   let forecastElementThree = document.querySelector("#day-3-forecast");
-  let forecastThree = response.data.list[14];
+  let forecastThree = response.data.daily[2];
   
   forecastElementThree.innerHTML = `
       <img class= "forecast-icon"id="icon-3" src="https://openweathermap.org/img/wn/${forecastThree.weather[0].icon}@2x.png" alt="weather icon">
-      <p class="high-temp" id="hi-temp-3">${Math.round((forecastThree.main.temp_max * 9) / 5 + 32)}°F</p>
+      <p class="high-temp" id="hi-temp-3">${Math.round((forecastThree.temp.day * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-3">${forecastThree.weather[0].description}</p>
   `;
 
   let forecastElementFour = document.querySelector("#day-4-forecast");
-  let forecastFour = response.data.list[22];
+  let forecastFour = response.data.daily[3];
   
   forecastElementFour.innerHTML = `
       <img class= "forecast-icon"id="icon-4" src="https://openweathermap.org/img/wn/${forecastFour.weather[0].icon}@2x.png" alt="weather icon">
-      <p class="high-temp" id="hi-temp-4">${Math.round((forecastFour.main.temp_max * 9) / 5 + 32)}°F</p>
+      <p class="high-temp" id="hi-temp-4">${Math.round((forecastFour.temp.day * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-4">${forecastFour.weather[0].description}</p>
   `;
 
   let forecastElementFive = document.querySelector("#day-5-forecast");
-  let forecastFive = response.data.list[30];
+  let forecastFive = response.data.daily[4];
   
   forecastElementFive.innerHTML = `
       <img class= "forecast-icon"id="icon-5" src="https://openweathermap.org/img/wn/${forecastFive.weather[0].icon}@2x.png" alt="weather icon">
-      <p class="high-temp" id="hi-temp-5">${Math.round((forecastFive.main.temp_max * 9) / 5 + 32)}°F</p>
+      <p class="high-temp" id="hi-temp-5">${Math.round((forecastFive.temp.day * 9) / 5 + 32)}°F</p>
       <p class="forecast-description" id="forecast-description-5">${forecastFive.weather[0].description}</p>
   `;
 }
@@ -158,24 +158,23 @@ function showForecast (response) {
 
 
 // Search Bar to API
-function searchCity(city) {
-    let apiKey = "809f83a3c3f1056fc8bafdb178a866cc";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then(showWeather);
+//function searchCity(city) {
+    //let apiKey = "809f83a3c3f1056fc8bafdb178a866cc";
+    //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    //axios.get(apiUrl).then(showWeather);
 
-    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
-    axios.get(apiUrl).then(showForecast);
-  }
+    //apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+    //axios.get(apiUrl).then(showForecast);
+  //}
 
-function handleSubmit(event) {
-    event.preventDefault();
-    let city = document.querySelector("#city-input").value;
-    searchCity(city);
-  }
+//function handleSubmit(event) {
+    //event.preventDefault();
+    //let city = document.querySelector("#city-input").value;
+    //searchCity(city);
+  //}
 
-let form = document.querySelector("#city-form");
-form.addEventListener("submit", handleSubmit);
-
+//let form = document.querySelector("#city-form");
+//form.addEventListener("submit", handleSubmit);
 
 
 // Get Lat, Long from Free-Form Text Search via HERE API
@@ -187,9 +186,12 @@ function getLatLon(response) {
   console.log(lat);
   console.log(lon);
 
- // let apiKey = "809f83a3c3f1056fc8bafdb178a866cc";
- // let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
- // axios.get(apiUrl).then(showForecast);
+  let apiKey = "809f83a3c3f1056fc8bafdb178a866cc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showWeather);
+  
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function getLatLong(location) {
@@ -208,4 +210,4 @@ let locationForm = document.querySelector("#city-form");
 locationForm.addEventListener("submit", locaitonSubmit);
 
 
-searchCity("New York");
+getLatLong("Atlantic City");
