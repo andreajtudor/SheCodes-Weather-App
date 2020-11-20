@@ -106,6 +106,10 @@ a:active {
     top: -23px;
 }
 
+#other-info {
+    line-height: 1.1;
+}
+
 .todays-weather {
     padding-left: 5%;
 }
