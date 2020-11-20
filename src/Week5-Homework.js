@@ -83,15 +83,10 @@ navigator.geolocation.getCurrentPosition(getPosition);
 function showWeather (response) {
     document.querySelector("#current-city").innerHTML = `${response.data.name}`;
     document.querySelector("#current-temp").innerHTML = Math.round((response.data.main.temp * 9) / 5 + 32);
-    document.querySelector("#hi-temp-1").innerHTML = `${Math.round((response.data.main.temp_max * 9) / 5 + 32)}°F `;
-    document.querySelector("#forecast-description-1").innerHTML = response.data.weather[0].description;
     document.querySelector("#other-info").innerHTML = `${response.data.weather[0].description} with a humidity of ${response.data.main.humidity}%`;
     
     let currentIconElement = document.querySelector("#current-weather-icon");
     currentIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-
-    let dayOneIconElement = document.querySelector("#icon-1");
-    dayOneIconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   
     // Convert Temp
     function convertTempC (event) {
@@ -118,6 +113,15 @@ function showWeather (response) {
 function showForecast (response) {
   console.log(response.data.daily);
 
+  let forecastElementOne = document.querySelector("#day-1-forecast");
+  let forecastOne = response.data.daily[0];
+  
+  forecastElementOne.innerHTML = `
+      <img class= "forecast-icon"id="icon-1" src="https://openweathermap.org/img/wn/${forecastOne.weather[0].icon}@2x.png" alt="weather icon">
+      <p class="high-temp" id="hi-temp-1">${Math.round((forecastOne.temp.day * 9) / 5 + 32)}°F</p>
+      <p class="forecast-description" id="forecast-description-1">${forecastOne.weather[0].description}</p>
+  `;
+  
   let forecastElementTwo = document.querySelector("#day-2-forecast");
   let forecastTwo = response.data.daily[1];
   
