@@ -116,7 +116,7 @@ function showWeather (response) {
 
 // Forecast
 function showForecast (response) {
-  console.log(response.data.list);
+  //console.log(response.data.list);
 
   let forecastElementTwo = document.querySelector("#day-2-forecast");
   let forecastTwo = response.data.list[6];
@@ -157,7 +157,7 @@ function showForecast (response) {
 
 
 
-// Search Bar
+// Search Bar to API
 function searchCity(city) {
     let apiKey = "809f83a3c3f1056fc8bafdb178a866cc";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -173,9 +173,34 @@ function handleSubmit(event) {
     searchCity(city);
   }
 
-
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", handleSubmit);
+
+
+// Get Lat, Long from Free-Form Text Search via HERE API
+
+function getLatLon(response) {
+  let lat = response.data.items[0].position.lat;
+  let lon = response.data.items[0].position.lng;
+
+  console.log(lat);
+  console.log(lon);
+}
+
+function getLatLong(location) {
+  let apiKeyHere = "pOSJq-NFi_yJbK1dYMRhcbhKcE7-8ZludyBZDhiwAE0";
+  let apiUrlHere = `https://geocode.search.hereapi.com/v1/geocode?q=${location}&apiKey=${apiKeyHere}`;
+  axios.get(apiUrlHere).then(getLatLon);
+}
+
+function locaitonSubmit(event) {
+  event.preventDefault();
+  let location = document.querySelector("#city-input").value;
+  getLatLong(location);
+}
+  
+let locationForm = document.querySelector("#city-form");
+locationForm.addEventListener("submit", locaitonSubmit);
 
 
 searchCity("New York");
