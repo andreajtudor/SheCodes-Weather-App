@@ -213,8 +213,7 @@ footer {
 
     .container {
         width: 99%;
-        padding-right: 5px;
-        padding-left: 5px;
+        margin: 0 auto;
     }
 
     .col.day-section-label {
