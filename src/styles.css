@@ -211,11 +211,6 @@ footer {
         padding-left: 5%;
     }
 
-    .container {
-        width: 99%;
-        margin: 0 auto;
-    }
-
     .col.day-section-label {
         display: none;
     }
