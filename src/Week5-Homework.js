@@ -195,7 +195,7 @@ function getLatLon(response) {
 }
 
 function getLatLong(location) {
-  let apiKeyHere = "Q6NK3f66tnfI5_NUCSH6ejCXddMcmeUaMS7sUpO_VH4";
+  let apiKeyHere = "NofBFeZq7h6sABdOZKx4IKeZiF_ar4B6LzBQ8Z3Uw_4";
   let apiUrlHere = `https://geocode.search.hereapi.com/v1/geocode?q=${location}&apiKey=${apiKeyHere}`;
   axios.get(apiUrlHere).then(getLatLon);
 }
